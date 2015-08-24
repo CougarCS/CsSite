@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+    @events = Event.all.order("date DESC")
   end
 
   def career
@@ -12,6 +13,7 @@ class PagesController < ApplicationController
   end
 
   def tutoring
+    @tutors =  TutoringTeacher.all
   end
 
   def contact

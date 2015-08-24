@@ -6,22 +6,47 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
+
 <body>
 <div class="header_top">
 	<div class="container">
 		<div class="top-nav">
 					<span class="menu">Menu</span>
 					<ul>
-						<li class="active"><a href="index.html"><span data-hover="Home">Home</span></a><label> </label></li>
-						<li><a href="about.html"> <span data-hover="About">About</span></a><label> </label></li>
-						<li><a href="contact.html"><span data-hover="Contact">Contact</span></a><label> </label></li>
+						<li class="active">
+						<%= link_to root_path do %>
+						<span data-hover="Home">Home</span>
+						<% end %>
+						<label> </label></li>
+						<li>
+						
+						<%= link_to pages_about_path do %>
+						<span data-hover="About">About</span>
+						<% end %>
+
+						<label> </label></li>
+
+						
+						<li>
+						<%= link_to pages_contact_path do %>
+						<span data-hover="Contact">Contact</span>
+						<% end %>
+						<label> </label></li>
+
+						<li>
+							<%= link_to new_member_session_path do %>
+								<span data-hover="Login">Login</span>
+							<% end %>
+						</li>
+
+
 					</ul>
 
 		</div>
 	</div>
 </div>
 
-<%= yield %>
-
+	<%= yield %>
 </body>
 </html>

@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
+  resources :tutoring_teachers
+  resources :raffles do
+    collection do
+      get 'read'
+      post 'read_card'
+    end
+  end
+  resources :events
+  devise_for :members, controllers: { registrations: 'members/registrations' }
   get 'pages/home'
+
 
   get 'pages/career'
 
@@ -10,6 +20,8 @@ Rails.application.routes.draw do
   get 'pages/tutoring'
 
   get 'pages/contact'
+
+  root "pages#home"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

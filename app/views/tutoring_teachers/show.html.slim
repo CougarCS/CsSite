@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Member:
+  = @tutoring_teacher.member.first_name
+p
+  strong Note:
+  = @tutoring_teacher.note
+p
+  strong Date:
+  = @tutoring_teacher.date
+
+= link_to 'Edit', edit_tutoring_teacher_path(@tutoring_teacher)
+'|
+= link_to 'Back', tutoring_teachers_path

@@ -1,0 +1,49 @@
+.container
+  h2
+    |Sign up
+  =form_for(resource, as: resource_name, url: registration_path(resource_name) ) do |f|
+    =devise_error_messages!
+
+    .field.form-group
+      =f.label :first_name
+      br
+      =f.text_field :first_name, class:"form-control"
+
+    .field.form-group
+      =f.label :last_name
+      br
+      =f.text_field :last_name, class:"form-control"
+
+    .field.form-group
+      =f.label :student_id, "Student Id"
+      br
+      =f.text_field :student_id, class:"form-control"
+
+    .field.form-group
+      =f.label :gender
+      br
+      =f.text_field :gender, class:"form-control"
+
+    .field.form-group
+      =f.label :email
+      br
+      =f.email_field :email, class:"form-control", autofocus:true
+
+    .field.form-group
+      =f.label :password
+      -if @minimum_password_length
+        |(
+        =@minimum_password_length
+        |characters minimum)
+      br
+      =f.password_field :password, class:"form-control", autocomplete: "off"
+
+    .field.form-group
+      =f.label :password_confirmation
+      br
+      =f.password_field :password_confirmation, class:"form-control", autocomplete: "off"
+
+    .actions
+      =f.submit "Sign up", class:"btn btn-default"
+
+  = render "devise/shared/links"

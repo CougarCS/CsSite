@@ -1,0 +1,8 @@
+<div class="container">
+    <%= @member %>
+	<%= form_tag(controller: "raffles", action: "read_card", method: "post") do %>
+		<%= text_field_tag :card, nil, autofocus: true %>
+		<%= submit_tag :submit %>
+	<% end %>
+
+</div>

@@ -1,2 +1,40 @@
-<h1>Pages#tutoring</h1>
-<p>Find me in app/views/pages/tutoring.html.erb</p>
+<div class="header_bottom">
+	<div class="container">
+		<h1><a href="index.html">Tutoring & Workshops This Week</a></h1> 
+	</div>
+</div>
+
+
+
+
+
+
+<div class="container">
+
+<%= link_to "Add a tutoring/workshop", new_tutoring_teacher_path , class:"btn btn-lg btn-default"%>
+<br>
+<br>
+
+<% @tutors.group_by(&:date).each do |day, tutor| %>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<%= day.strftime("%a %D") %>
+		</div>
+		<ul class="list-group" >
+			<% tutor.each do |tut| %>
+				<li class="list-group-item">
+						<h3><%= tut.member.first_name %> 
+						<%= tut.member.last_name %> 
+						</h3>
+						<p><%= tut.note %></p>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+
+<% end %>
+
+
+		
+</table>
+</div>

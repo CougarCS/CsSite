@@ -1,0 +1,30 @@
+-if current_member.tutor?
+  h1 Listing your tutoring sessions
+  .container
+    table.table
+      thead
+        tr
+          th.col-xs-8 Note
+          th.col-xs-2 Date
+          th
+          th
+          th
+
+      tbody
+        - @tutoring_teachers.each do |tutoring_teacher|
+          tr
+            td = tutoring_teacher.note
+            td = tutoring_teacher.date
+            td = link_to 'Show', tutoring_teacher
+            td = link_to 'Edit', edit_tutoring_teacher_path(tutoring_teacher)
+            td = link_to 'Destroy', tutoring_teacher, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+    br
+
+    = link_to 'New Tutoring teacher', new_tutoring_teacher_path
+
+
+
+-else
+  .container
+    h1 Please contact the Cougar CS office to become a tutor

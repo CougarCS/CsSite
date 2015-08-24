@@ -1,0 +1,25 @@
+h1 Listing raffles
+
+table
+  thead
+    tr
+      th Member
+      th Date
+      th Points
+      th
+      th
+      th
+
+  tbody
+    - @raffles.each do |raffle|
+      tr
+        td = raffle.member
+        td = raffle.date
+        td = raffle.points
+        td = link_to 'Show', raffle
+        td = link_to 'Edit', edit_raffle_path(raffle)
+        td = link_to 'Destroy', raffle, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Raffle', new_raffle_path

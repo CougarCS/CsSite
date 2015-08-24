@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Member:
+  = @raffle.member
+p
+  strong Date:
+  = @raffle.date
+p
+  strong Points:
+  = @raffle.points
+
+= link_to 'Edit', edit_raffle_path(@raffle)
+'|
+= link_to 'Back', raffles_path

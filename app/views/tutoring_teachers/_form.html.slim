@@ -1,0 +1,15 @@
+= form_for @tutoring_teacher do |f|
+  - if @tutoring_teacher.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@tutoring_teacher.errors.count, "error")} prohibited this tutoring_teacher from being saved:"
+      ul
+        - @tutoring_teacher.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :note
+    = f.text_area :note
+  .field
+    = f.label :date
+    = f.date_select :date
+  .actions = f.submit
