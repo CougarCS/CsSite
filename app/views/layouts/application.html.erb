@@ -33,14 +33,13 @@
 						<span data-hover="Contact">Contact</span>
 						<% end %>
 						<label> </label></li>
-
+						<% if current_member %>						
 						<li>
 							<%= link_to new_member_session_path do %>
 								<span data-hover="Login">Login</span>
 							<% end %>
 						</li>
-
-
+						<% end %>
 					</ul>
 
 		</div>
