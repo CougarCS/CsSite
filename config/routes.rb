@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   devise_for :members, controllers: { registrations: 'members/registrations' }
   get 'pages/home'
 
+  get 'pages/sponsors'
 
   get 'pages/career'
 

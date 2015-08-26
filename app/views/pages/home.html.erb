@@ -1,16 +1,11 @@
 <div class="header_bottom">
 	<div class="container">
-		<h1><a href="index.html">Cougar Cs</a></h1> 
+		<h1><%= link_to "Cougar CS", root_path %>
+		</h1> 
 	</div>
 </div>
 
 <div class="row">
-	<%= image_tag("banner2.jpg", class:"col-xs-4" ) %>
-	<%= image_tag("banner1.jpg", class:"col-xs-4" ) %>
-	<%= image_tag("banner3.jpg", class:"col-xs-4" ) %>
-</div>
-
-<div class="column_1">
   <div class="container">
   	 <div class="content_top">
 		<div class="col-md-3">
@@ -32,16 +27,6 @@
 				 <h3>CodeRed Hackathon</h3>
 			   </div>
 			<% end %>
-		  </div>
-		</div>
-		<div class="col-md-3">
-		  <div class="box_1">
-		  <%= link_to pages_contact_path  do %>
-		   <div class="inner_row">
-			 <span class="glyphicon glyphicon-comment icon_1" aria-hidden="true"></span>
-			 <h3>Contact</h3>
-		   </div>
-		   <% end %>
 		  </div>
 		</div>
 		<div class="col-md-3">
@@ -69,6 +54,14 @@
 	 </div>
   </div>
 </div>
+
+
+<div class="row image_container">
+	<%= image_tag("banner2.jpg", class:"col-xs-4" ) %>
+	<%= image_tag("banner1.jpg", class:"col-xs-4" ) %>
+	<%= image_tag("banner3.jpg", class:"col-xs-4" ) %>
+</div>
+
 <div class="container">
 	<div class="column_3">
 	<div class="col-xs-6 grid_1">

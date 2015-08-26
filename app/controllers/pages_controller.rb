@@ -18,4 +18,8 @@ class PagesController < ApplicationController
 
   def contact
   end
+
+  def sponsors
+    
+  end
 end

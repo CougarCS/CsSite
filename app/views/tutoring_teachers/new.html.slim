@@ -1,5 +1,11 @@
-h1 New tutoring_teacher
 
-== render 'form'
+-if current_member.tutor?
+	h1 New tutoring_teacher
 
-= link_to 'Back', tutoring_teachers_path
+	== render 'form'
+
+	= link_to 'Back', tutoring_teachers_path
+
+-else
+  .container
+    h1 Please contact the Cougar CS office to become a tutor
