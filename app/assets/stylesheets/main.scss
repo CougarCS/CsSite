@@ -1,5 +1,23 @@
+.top_row{
+  background:#960C22;
+  padding: 10px 15px 0 15px;
+  color:#ddd;
+}
+
+.top_row a {
+  color: #ddd;
+}
+
 .image_container{
   margin:  50px 0 50px 0;
+}
+
+.first_image{
+  padding-left:0;
+}
+
+.last_image{
+  padding-right:0;
 }
 
 
@@ -33,7 +51,7 @@ body a{
 .header_top{
   background:#960C22;
   text-align: center;
-  min-height:130px;
+  min-height:110px;
   position:relative;
 }
 .header_top:before {
@@ -194,7 +212,7 @@ body a{
 }
 /*----*/  
 .header_bottom{
-	padding:4em 0;
+	padding:4em 0 0 0;
 }
 .about{
  -webkit-box-shadow: 0 -10px 34px 0 rgba(0, 0, 0, 0.2);

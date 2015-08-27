@@ -9,6 +9,16 @@
 
 
 <body>
+<div class="top_row text-right">
+
+	<% if current_member %>
+		<%= link_to edit_member_registration_path do %>
+			Logged in as <%= current_member.first_name + " " + current_member.last_name %>
+		<% end %>
+		|
+		<%= link_to "Sign out",  destroy_member_session_path,  method: :delete %>
+	<% end %>
+</div>
 <div class="header_top">
 	<div class="container">
 		<div class="top-nav">
@@ -33,12 +43,13 @@
 						<span data-hover="Contact">Contact</span>
 						<% end %>
 						<label> </label></li>
-						<% if current_member %>						
-						<li>
-							<%= link_to new_member_session_path do %>
-								<span data-hover="Login">Login</span>
-							<% end %>
-						</li>
+
+						<% if !current_member %>						
+							<li>
+								<%= link_to new_member_session_path do %>
+									<span data-hover="Login">Login</span>
+								<% end %>
+							</li>
 						<% end %>
 					</ul>
 

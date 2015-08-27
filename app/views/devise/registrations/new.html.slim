@@ -5,7 +5,7 @@
     =devise_error_messages!
 
     .field.form-group
-      =f.label :first_name
+      =f.label :first_name, autofocus:true
       br
       =f.text_field :first_name, class:"form-control"
 
@@ -27,7 +27,17 @@
     .field.form-group
       =f.label :email
       br
-      =f.email_field :email, class:"form-control", autofocus:true
+      =f.email_field :email, class:"form-control"
+
+    .field.form-group
+      =f.label :classification
+      br
+      =f.text_field :classification, class:"form-control"
+      
+    .field.form-group
+      =f.label :returning
+      br
+      =f.text_field :returning, class:"form-control"
 
     .field.form-group
       =f.label :password
@@ -42,6 +52,13 @@
       =f.label :password_confirmation
       br
       =f.password_field :password_confirmation, class:"form-control", autocomplete: "off"
+
+      
+    .field.form-group
+      =f.label :dietary_restrictions
+      br
+      =f.text_field :dietary_restrictions, class:"form-control"
+
 
     .actions
       =f.submit "Sign up", class:"btn btn-default"

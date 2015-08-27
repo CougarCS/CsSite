@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150824041514) do
+ActiveRecord::Schema.define(version: 20150827031657) do
 
   create_table "events", force: :cascade do |t|
     t.text     "content"
@@ -42,6 +42,9 @@ ActiveRecord::Schema.define(version: 20150824041514) do
     t.string   "gender"
     t.string   "student_id"
     t.boolean  "tutor"
+    t.string   "classification"
+    t.boolean  "returning"
+    t.string   "dietary_restrictions"
   end
 
   add_index "members", ["email"], name: "index_members_on_email", unique: true
