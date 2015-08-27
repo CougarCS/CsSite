@@ -17,6 +17,9 @@
 		<% end %>
 		|
 		<%= link_to "Sign out",  destroy_member_session_path,  method: :delete %>
+	<% else %>
+			<%= link_to "Sign In", new_member_session_path %>
+			<%= link_to "Register", new_member_registration_path %>
 	<% end %>
 </div>
 <div class="header_top">
@@ -43,14 +46,6 @@
 						<span data-hover="Contact">Contact</span>
 						<% end %>
 						<label> </label></li>
-
-						<% if !current_member %>						
-							<li>
-								<%= link_to new_member_session_path do %>
-									<span data-hover="Login">Login</span>
-								<% end %>
-							</li>
-						<% end %>
 					</ul>
 
 		</div>
