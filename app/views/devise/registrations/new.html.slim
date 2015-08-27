@@ -34,11 +34,13 @@
       br
       =f.text_field :classification, class:"form-control"
       
-    .field.form-group
-      =f.label :returning
+    .field.form-group.text-left
+      .col-xs-2
+        =f.label :returning
+      .col-xs-1
+        =f.check_box :returning, class:"form-control"
       br
-      =f.text_field :returning, class:"form-control"
-
+      br
     .field.form-group
       =f.label :password
       -if @minimum_password_length
