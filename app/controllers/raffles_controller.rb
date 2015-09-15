@@ -6,8 +6,8 @@ class RafflesController < ApplicationController
 
     id = raffle_params[:card]
     if id.length < 10
-      if Member.find_by(["student_id = ?", id[0]])
-      @member = Member.find_by(["student_id = ?", id[0]])
+      if Member.find_by(["student_id = ?", id])
+      @member = Member.find_by(["student_id = ?", id)
       @raffle = Raffle.new(date: Date.today(), member_id: @member.id )
       redirect_to read_raffles_url, notice: @member.first_name + " " + @member.last_name 
       else
