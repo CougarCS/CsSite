@@ -5,14 +5,24 @@ class RafflesController < ApplicationController
   def read_card
 
     id = raffle_params[:card]
-    id[0] = ""
-    id = id.split("?")
-    if Member.find_by(["student_id = ?", id[0]])
-    @member = Member.find_by(["student_id = ?", id[0]])
-    @raffle = Raffle.new(date: Date.today(), member_id: @member.id )
-    redirect_to read_raffles_url, notice: @member.first_name + " " + @member.last_name 
+    if id.length < 10
+      if Member.find_by(["student_id = ?", id[0]])
+      @member = Member.find_by(["student_id = ?", id[0]])
+      @raffle = Raffle.new(date: Date.today(), member_id: @member.id )
+      redirect_to read_raffles_url, notice: @member.first_name + " " + @member.last_name 
+      else
+      redirect_to read_raffles_url, notice: "User not found"
+      end
     else
-    redirect_to read_raffles_url, notice: "User not found"
+      id[0] = ""
+      id = id.split("?")
+      if Member.find_by(["student_id = ?", id[0]])
+      @member = Member.find_by(["student_id = ?", id[0]])
+      @raffle = Raffle.new(date: Date.today(), member_id: @member.id )
+      redirect_to read_raffles_url, notice: @member.first_name + " " + @member.last_name 
+      else
+      redirect_to read_raffles_url, notice: "User not found"
+      end
     end
   end
 
