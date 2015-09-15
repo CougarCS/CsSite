@@ -3,11 +3,10 @@ class RafflesController < ApplicationController
   before_filter :check_if_admin
 
   def read_card
-
     id = raffle_params[:card]
     if id.length < 10
       if Member.find_by(["student_id = ?", id])
-      @member = Member.find_by(["student_id = ?", id)
+      @member = Member.find_by(["student_id = ?", id])
       @raffle = Raffle.new(date: Date.today(), member_id: @member.id )
       redirect_to read_raffles_url, notice: @member.first_name + " " + @member.last_name 
       else
