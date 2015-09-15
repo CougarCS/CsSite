@@ -7,10 +7,13 @@ class RafflesController < ApplicationController
     id = raffle_params[:card]
     id[0] = ""
     id = id.split("?")
+    if Member.find_by(["student_id = ?", id[0]]).exists?
     @member = Member.find_by(["student_id = ?", id[0]])
     @raffle = Raffle.new(date: Date.today(), member_id: @member.id )
-    @raffle.save
     redirect_to read_raffles_url, notice: @member.first_name + " " + @member.last_name 
+    else
+    redirect_to read_raffles_url, notice: "User not found"
+    end
   end
 
   def read
