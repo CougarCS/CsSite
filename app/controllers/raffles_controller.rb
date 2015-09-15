@@ -3,10 +3,14 @@ class RafflesController < ApplicationController
   before_filter :check_if_admin
 
   def read_card
-    @member = Member.find_by(["card_number = ?", raffle_params[:card]])
+
+    id = raffle_params[:card]
+    id[0] = ""
+    id = id.split("?")
+    @member = Member.find_by(["student_id = ?", id[0]])
     @raffle = Raffle.new(date: Date.today(), member_id: @member.id )
     @raffle.save
-    redirect_to read_raffles_url
+    redirect_to read_raffles_url, notice: @member.first_name + " " + @member.last_name 
   end
 
   def read
@@ -90,7 +94,7 @@ class RafflesController < ApplicationController
       if signed_in?
         raise 'Shoo! THIS IS FOR ADMINS ONLY!!' unless current_member.is_admin?
       else
-        authenticate_user!
+        authenticate_member!
       end
     end
 end
