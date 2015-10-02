@@ -5,7 +5,7 @@ class TutoringTeachersController < ApplicationController
   # GET /tutoring_teachers
   # GET /tutoring_teachers.json
   def index
-    @tutoring_teachers = current_member.tutoring_teachers.all
+    @tutoring_teachers = TutoringTeacher.all
   end
 
   # GET /tutoring_teachers/1
@@ -70,6 +70,6 @@ class TutoringTeachersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tutoring_teacher_params
-      params.require(:tutoring_teacher).permit( :note, :date)
+      params.require(:tutoring_teacher).permit( :note, :date, :member_name)
     end
 end

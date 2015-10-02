@@ -1,6 +1,6 @@
 <div class="header_bottom">
 	<div class="container">
-		<h1><a href="index.html">Tutoring & Workshops This Week</a></h1> 
+		<h1>Tutoring & Workshops This Week</h1> 
 	</div>
 </div>
 
@@ -11,16 +11,8 @@
 
 <div class="container">
 
-<h2>
-	Under construction
-</h2>
-<p>
-	This section is under construction and will contain up-to-date tutoring information.  Please check back for updates.
-</p>
 
-
-<!-- 
-<% link_to "Add a tutoring/workshop", new_tutoring_teacher_path , class:"btn btn-lg btn-default"%>
+<%= link_to "Manage sessions", tutoring_teachers_path , class:"btn btn-lg btn-default" if current_member &&current_member.tutor %>
 <br>
 <br>
 
@@ -32,9 +24,7 @@
 		<ul class="list-group" >
 			<% tutor.each do |tut| %>
 				<li class="list-group-item">
-						<h3><%= tut.member.first_name %> 
-						<%= tut.member.last_name %> 
-						</h3>
+						<h3><%= tut.member_name %></h3>
 						<p><%= tut.note %></p>
 				</li>
 			<% end %>
@@ -43,7 +33,7 @@
 
 <% end %>
 
- -->
+
 		
 
 </div>
